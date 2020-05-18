@@ -5,13 +5,16 @@
         <el-menu
           :default-active="activeIndex"
           mode="horizontal"
+          router="true"
           @select="handleSelect"
         >
-          <el-menu-item index="test/1">
-            <nuxt-link to="/test/1">首页</nuxt-link>
+          <el-menu-item index="/home/article">
+            首页
           </el-menu-item>
-          <el-menu-item index="2">关于</el-menu-item>
-          <el-menu-item index="3">登录</el-menu-item>
+          <el-menu-item index="/home/about">
+            关于
+          </el-menu-item>
+          <el-menu-item index="/home/login">登录</el-menu-item>
           <el-menu-item index="4">管理</el-menu-item>
           <el-menu-item index="5">写文章</el-menu-item>
         </el-menu>
