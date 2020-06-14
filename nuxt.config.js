@@ -31,7 +31,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/element-ui", "~/plugins/axios"],
+  plugins: ["@/plugins/element-ui"],
   /*
    ** Nuxt.js dev-modules
    */
@@ -41,20 +41,26 @@ module.exports = {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios",
-    "@nuxtjs/proxy"
+    "@nuxtjs/axios"
+    // '@nuxtjs/proxy'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    // prefix: "/api",
-    // credentials: true,
-    // proxy: true
+    proxy: true,
+    prefix: "/api",
+    credentials: true
   },
   proxy: {
-    // "/api": "http://localhost:3000"
+    "/api": {
+      target: "http://localhost:3000",
+      changeOrigin: true,
+      // pathRewrite: {
+      //   '^/aps' : '/'
+      // }
+    }
   },
   /*
    ** Build configuration

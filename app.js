@@ -4,7 +4,7 @@ const path = require('path')
 const bodyParse = require('body-parser')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
-const router = require('./server/router')
+const router = require('./server2/router')
 const app = express()
 
 const resolve = file => path.resolve(__dirname, file)
